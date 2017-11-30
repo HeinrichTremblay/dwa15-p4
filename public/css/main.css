@@ -1,0 +1,332 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #1EAAF1;
+}
+
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 100;
+  color: white;
+}
+
+.clear {
+  clear: both;
+}
+
+.left {
+  float:left;
+}
+
+.right {
+  float:right;
+}
+
+.nav_container {
+  background: #1A94D2;
+  overflow: hidden;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  min-width: 1000px;
+}
+
+.main_container {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 1000px;
+  min-width: 1000px;
+  height: 100%;
+  position: relative;
+}
+
+nav .brand {
+  padding:15px;
+  float: left;
+}
+
+nav .brand img {
+  width: 57px;
+  height: 36px;
+  float: left;
+}
+
+nav .brand h1 {
+  float: left;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 0 15px;
+  padding: 0;
+  line-height: 36px;
+}
+
+.main_container h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  text-align: center;
+  font-size: 24px;
+}
+
+.sub_menu {
+  padding: 15px 0;
+  border-bottom: 1px solid #4BBBF3;
+}
+
+.left_col {
+  float: left;
+  margin-top: 20px;
+}
+
+.right_col {
+  float: right;
+  margin-top: 20px;
+}
+
+.list {
+  background: #FFFFFF;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.30);
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.short_list {
+  width: 460px;
+  top: 230px;
+  bottom: 30px;
+  right: 0;
+  position: absolute;
+  box-sizing: border-box;
+  color: black;
+}
+
+.short_list h3 {
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: #000000;
+}
+
+.short_list thead > tr, tbody {
+  display: block;
+}
+
+.short_list table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.list thead {
+  font-size: 15px;
+}
+
+.short_list tbody {
+  overflow: auto;
+  height: 100%;
+  padding-right: 20px;
+}
+
+.list td {
+  border-bottom: 1px solid #E5E5E5;
+  padding: 5px 0;
+}
+
+.list td, .list tr {
+  width: 100%;
+  display: block;
+}
+.list_content {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  left: 20px;
+  bottom: 20px;
+}
+
+.list b {
+  font-weight: 600;
+}
+
+.short_list .list_header span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #7F7F7F;
+  float: right;
+}
+
+.ideas_form {
+  width: 460px;
+}
+
+.ideas_form input[type="submit"] {
+  background: #61C3F5;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px 15px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.ideas_form label {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  color: #D2EEFC;
+  margin-bottom: 5px;
+}
+
+.ideas_form table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ideas_form table td {
+  padding-right: 5px;
+}
+
+.ideas_form table td:last-child {
+  padding-right: 0;
+}
+
+.ideas_form input[type="text"], .ideas_form select {
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #CDE7F6;
+  padding: 0 10px;
+  width: 100%;
+  height: 45px;
+  background: #1A94D2;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.ideas_form input[type="text"]::placeholder {
+  color: #CDE7F6;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 18px;
+  color: #D2EEFC;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.scatter_wrap {
+  stroke: white;
+}
+
+.map {
+  display: none;
+  opacity: 0.5;
+}
+
+#map_form input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-left: 10px;
+}
+
+.errors {
+  border: 1px solid #E03E30;
+  background-color: #F9D8D6;
+  color: black;
+  padding: 15px;
+  margin: 15px;
+}
+
+.alert {
+    border: 1px solid white;
+    padding:15px;
+    margin: 15px;
+    font-weight:bold;
+    border-radius: 3px;
+    text-align:center;
+}
+
+.index_menu h2 {
+    float: left;
+    display: inline-block;
+    line-height: 45px;
+}
+
+.blueprint_panel {
+    background: rgba(0,0,0,0.10);
+    border: 1px solid rgba(255,255,255,0.90);
+    border-radius: 4px;
+    margin: 15px ;
+    width: 200px;
+    height: 200px;
+    float: left;
+    text-align: center;
+    padding: 15px;
+    color: white;
+}
+
+.blueprint_panel:hover {
+    background: rgba(0,0,0,0.20);
+    color: white;
+}
+
+.blueprint_wrapper {
+    padding-top: 25px;
+}
+
+.blueprint_form {
+    text-align: right;
+    float: right;
+}
+
+.blueprint_form input[type="submit"] {
+  background: #61C3F5;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  height: 45px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.blueprint_form input[type="text"] {
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #CDE7F6;
+  padding: 0 10px;
+  height: 45px;
+  background: #1A94D2;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.blueprint_form input[type="text"]::placeholder {
+  color: #CDE7F6;
+}
+
+.clear {
+    clear: both;
+}

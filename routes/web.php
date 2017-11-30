@@ -10,10 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'BlueprintController@index');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('/blueprint', 'BlueprintController@store');
+Route::get('/blueprint/{id}', 'BlueprintController@show');
+Route::get('/blueprint/{id}/edit', 'BlueprintController@edit');
+Route::put('/blueprint/{id}', 'BlueprintController@update');
+Route::delete('/blueprint/{id}', 'BlueprintController@delete');
+
 
 Route::get('/debug', function () {
 
