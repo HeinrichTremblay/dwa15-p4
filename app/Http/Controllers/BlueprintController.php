@@ -50,8 +50,73 @@ class BlueprintController extends Controller
             return redirect('/')->with('alert', 'Blueprint not found.');
         }
 
+        $features = $blueprint->features->sortByDesc('priority');
+
         return view('blueprints.show')->with([
             'blueprint' => $blueprint,
+            'features' => $features,
         ]);
+    }
+
+    /*
+    * GET /blueprint/{id}/edit
+    */
+    public function edit($id)
+    {
+        $blueprint = Blueprint::find($id);
+
+        if (!$blueprint)
+        {
+            return redirect('/')->with('alert', 'Blueprint not found.');
+        }
+
+        return view('blueprints.edit')->with([
+            'blueprint' => $blueprint,
+        ]);
+    }
+
+    /*
+    * PUT /blueprint/{id}
+    */
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'title' => 'required|min:3',
+        ]);
+        $blueprint = Blueprint::find($id);
+        $blueprint->title = $request->input('title');
+        $blueprint->save();
+        return redirect('/')->with('alert', 'Your changes were saved.');
+    }
+
+    /*
+    * GET /blueprint/{id}/delete
+    */
+    public function delete($id)
+    {
+        $blueprint = Blueprint::find($id);
+
+        if (!$blueprint)
+        {
+            return redirect('/')->with('alert', 'Blueprint not found.');
+        }
+
+        return view('blueprints.delete')->with([
+            'blueprint' => $blueprint,
+            'previousUrl' => url()->previous() == url()->current() ? '/' : url()->previous(),
+        ]);
+    }
+
+    /*
+    * DELETE /blueprint/{id}
+    */
+    public function destroy($id)
+    {
+        $blueprint = Blueprint::find($id);
+        if (!$blueprint) {
+            return redirect('/')->with('alert', 'Blueprint not found');
+        }
+        $blueprint->delete();
+        return redirect('/')->with('alert', $blueprint->title.' was removed.');
     }
 }

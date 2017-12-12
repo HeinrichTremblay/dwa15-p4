@@ -19,6 +19,7 @@ class CreateFeaturesTable extends Migration
             $table->string('title');
             $table->integer('value');
             $table->integer('complexity');
+            $table->integer('priority');
         });
     }
 

@@ -16,7 +16,14 @@ Route::post('/blueprint', 'BlueprintController@store');
 Route::get('/blueprint/{id}', 'BlueprintController@show');
 Route::get('/blueprint/{id}/edit', 'BlueprintController@edit');
 Route::put('/blueprint/{id}', 'BlueprintController@update');
-Route::delete('/blueprint/{id}', 'BlueprintController@delete');
+Route::delete('/blueprint/{id}', 'BlueprintController@destroy');
+Route::get('/blueprint/{id}/delete', 'BlueprintController@delete');
+
+Route::post('/blueprint/{id}/feature', 'FeatureController@store');
+Route::get('/feature/{id}/edit', 'FeatureController@edit');
+Route::get('/feature/{id}/delete', 'FeatureController@delete');
+Route::delete('/feature/{id}', 'FeatureController@destroy');
+Route::put('/feature/{id}', 'FeatureController@update');
 
 
 Route::get('/debug', function () {

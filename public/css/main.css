@@ -36,6 +36,7 @@ body {
   top: 0;
   width: 100%;
   min-width: 1000px;
+  z-index: 1000;
 }
 
 .main_container {
@@ -273,6 +274,20 @@ h3 {
     line-height: 45px;
 }
 
+.index_menu a,
+.index_menu a:hover,
+.index_menu a:focus,
+.index_menu a:active,
+.index_menu a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.index_menu a {
+    float: right;
+    line-height: 45px;
+}
+
 .blueprint_panel {
     background: rgba(0,0,0,0.10);
     border: 1px solid rgba(255,255,255,0.90);
@@ -284,6 +299,34 @@ h3 {
     text-align: center;
     padding: 15px;
     color: white;
+    position: relative;
+}
+
+.blueprint_panel a,
+.blueprint_panel a:hover,
+.blueprint_panel a:active,
+.blueprint_panel a:visited,
+.blueprint_panel a:focus {
+  color:white;
+  text-decoration: none;
+}
+
+.blueprint_panel a:hover {
+  opacity: 0.7;
+}
+
+.blueprint_panel_menu {
+  position: absolute;
+  bottom: 10px;
+  width: 200px;
+}
+
+.blueprint_panel_menu .left {
+  /*left: 0;*/
+}
+
+.blueprint_panel_menu .right {
+  /*right: 0;*/
 }
 
 .blueprint_panel:hover {
@@ -329,4 +372,17 @@ h3 {
 
 .clear {
     clear: both;
+}
+
+.features_menu {
+    float: right;
+}
+
+.features_menu a,
+.features_menu a:hover,
+.features_menu a:focus,
+.features_menu a:active,
+.features_menu a:visited {
+    color: black;
+    text-decoration: none;
 }
