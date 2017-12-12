@@ -37,7 +37,7 @@ Happy P4 √ Ideas Blueprint.
     <section class="blueprint_wrapper">
         @foreach ($blueprints as $blueprint)
             <div class="blueprint_panel">
-                <b><a href="/blueprint/{{ $blueprint->id }}">{{ $blueprint->title }}</a></b>
+                <h3><a href="/blueprint/{{ $blueprint->id }}">{{ $blueprint->title }}</a></h3>
                 <p><a href="/blueprint/{{ $blueprint->id }}">{{ $blueprint->tags[0]->name }}</a></p>
                 <div class="blueprint_panel_menu">
                     <a class="left" href="/blueprint/{{ $blueprint->id }}/edit">Edit</a>
