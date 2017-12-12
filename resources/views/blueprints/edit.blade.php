@@ -5,7 +5,7 @@ Happy P4 √ Ideas Blueprint.
 @endsection
 
 @section('description')
-Happy P3 √ Ideas Blueprint.
+Happy P4 √ Ideas Blueprint.
 @endsection
 
 @section('content')

@@ -23,7 +23,7 @@ class BlueprintController extends Controller
     }
 
     /*
-    * POST /blueprint/
+    * POST /blueprint
     */
     public function store(Request $request)
     {
