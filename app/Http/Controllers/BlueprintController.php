@@ -119,4 +119,17 @@ class BlueprintController extends Controller
         $blueprint->delete();
         return redirect('/')->with('alert', $blueprint->title.' was removed.');
     }
+
+    /*
+    * PUT /blueprint/{id}/legend
+    */
+    public function legend(Request $request, $id)
+    {
+        $blueprint = Blueprint::find($id);
+        $blueprint->map_legend = !$blueprint->map_legend;
+        $blueprint->save();
+        return redirect()->action(
+            'BlueprintController@show', ['id' => $blueprint->id]
+        );
+    }
 }

@@ -243,7 +243,7 @@ h3 {
 
 .map {
   display: none;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 #map_form input[type="checkbox"] {
@@ -385,4 +385,68 @@ h3 {
 .features_menu a:visited {
     color: black;
     text-decoration: none;
+}
+
+.action_panel_wrapper {
+    margin: auto;
+    margin-top: 45px;
+    padding: 25px;
+    border-radius: 4px;
+    max-width: 400px;
+    background: white;
+    border: 1px solid white;
+    text-align: center;
+}
+
+.action_panel_wrapper h2 {
+    color: black;
+}
+
+.action_panel_wrapper input[type="submit"] {
+  background: #61C3F5;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px 15px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.action_panel_wrapper input[type="text"],
+.action_panel_wrapper select {
+  box-sizing: border-box;
+  padding: 0 10px;
+  width: 100%;
+  height: 45px;
+  background: #FFFFFF;
+  border: 1px solid #C4CDD5;
+  border-radius: 3px;
+  font-size: 14px;
+  color: #585C60;
+}
+
+.action_panel_wrapper a,
+.action_panel_wrapper a:hover,
+.action_panel_wrapper a:active,
+.action_panel_wrapper a:focus,
+.action_panel_wrapper a:visited {
+    color: #E03E30;
+    text-decoration: none;
+    display: inline-block;
+    padding-top:15px;
+}
+
+.delete_action input[type="submit"] {
+    background: #E03E30;
+}
+
+.delete_action .cancel a {
+    color: black;
+}
+
+.feature_edit {
+    color: black;
 }

@@ -19,6 +19,8 @@ Route::put('/blueprint/{id}', 'BlueprintController@update');
 Route::delete('/blueprint/{id}', 'BlueprintController@destroy');
 Route::get('/blueprint/{id}/delete', 'BlueprintController@delete');
 
+Route::put('/blueprint/{id}/legend', 'BlueprintController@legend');
+
 Route::post('/blueprint/{id}/feature', 'FeatureController@store');
 Route::get('/feature/{id}/edit', 'FeatureController@edit');
 Route::get('/feature/{id}/delete', 'FeatureController@delete');

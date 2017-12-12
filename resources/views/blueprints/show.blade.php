@@ -29,9 +29,10 @@ Happy P4 √ Ideas Blueprint.
 
         <div class="map_menu right">
             <span>Legend</span>
-            <form id="map_form" class="right" action="/" method="post">
+            <form id="map_form" class="right" action="/blueprint/{{ $blueprint->id }}/legend" method="post">
+                {{ method_field('put') }}
                 {{ csrf_field() }}
-                <input type="checkbox" name="legend" value="1" @if($blueprint->map_legend) "CHECKED" @endif>
+                <input type="checkbox" onclick="document.getElementById('map_form').submit();" name="legend" value="1" @if($blueprint->map_legend) checked @endif>
             </form>
         </div>
 

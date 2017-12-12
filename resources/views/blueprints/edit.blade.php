@@ -15,14 +15,14 @@ Happy P3 √ Ideas Blueprint.
         <div class="clear"></div>
     </nav>
     <section>
-        <div class="blueprint_edit_wrapper">
+        <div class="blueprint_edit_wrapper action_panel_wrapper">
             <form action="/blueprint/{{ $blueprint->id }}" method="post">
                 {{ method_field('put') }}
                 {{ csrf_field() }}
                 <input type="text" value="{{ $blueprint->title }}" id="title" name="title" placeholder="Blueprint">
                 <input type="submit" name="submit" value="Edit Blueprint">
             </form>
-            <a href="/blueprint/{{ $blueprint->id }}/delete">Delete - {{ $blueprint->title }}</a>
+            <a href="/blueprint/{{ $blueprint->id }}/delete">Delete</a>
         </div>
     </section>
 </div>

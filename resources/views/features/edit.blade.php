@@ -15,7 +15,7 @@
     <div class="clear"></div>
   </nav>
   <section>
-    <div class="blueprint_edit_wrapper">
+    <div class="blueprint_edit_wrapper feature_edit action_panel_wrapper">
       <form action="/feature/{{ $feature->id }}" method="post">
         {{ method_field('put') }}
         {{ csrf_field() }}
@@ -45,9 +45,9 @@
                 </tr>
             </tbody>
         </table>
-        <input type="submit" name="submit" value="Edit Feature">
+        <input type="submit" name="submit" value="Edit">
       </form>
-      <a href="/feature/{{ $feature->id }}/delete">Delete - {{ $feature->title }}</a>
+      <a href="/feature/{{ $feature->id }}/delete">Delete</a>
     </div>
   </section>
 </div>
