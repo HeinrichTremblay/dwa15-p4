@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://use.fontawesome.com/509a76b82c.js"></script>
     <meta charset="utf-8">
     <title>@yield('title', 'Blueprints')</title>
     <meta name="description" content="@yield('description', 'Ideas Blueprints')">

@@ -19,6 +19,11 @@ Happy P3 √ Ideas Blueprint.
             <form action="/blueprint/{{ $blueprint->id }}" method="post">
                 {{ method_field('put') }}
                 {{ csrf_field() }}
+                <select class="index_select" id="tag" name="tag">
+                    @foreach ($tags as $tag)
+                        <option value="{{ $tag->id }}" @if($blueprint->tags[0]->name === $tag->name) selected @endif>{{ $tag->name }}</option>
+                    @endforeach
+                </select>
                 <input type="text" value="{{ $blueprint->title }}" id="title" name="title" placeholder="Blueprint">
                 <input type="submit" name="submit" value="Edit Blueprint">
             </form>

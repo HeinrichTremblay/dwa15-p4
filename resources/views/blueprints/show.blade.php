@@ -90,7 +90,7 @@ Happy P4 √ Ideas Blueprint.
                 <table>
                     <thead>
                         <tr>
-                            <th>Feature/Idea</th>
+                            <th>Title</th>
                             </tr>
                     </thead>
                     <tbody>
@@ -116,11 +116,12 @@ Happy P4 √ Ideas Blueprint.
 
 
 @push('body')
+<script src="{{ asset('js/d3.min.js') }}"></script>
 <script type="text/javascript">
 var xLabel = "Complexity";
 var yLabel = "Value";
-var items = @json($features);
+var features = {!! $features->toJson() !!};
+var items = Object.keys(features).map(function(k) { return features[k] });
 </script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 @endpush

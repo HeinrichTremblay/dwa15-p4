@@ -1,14 +1,14 @@
 scatter(items);
 
-function scatter(data) {
+function scatter(items) {
   var width = 510;
-  var height = 300;
+  var height = 400;
   var padding = 25;
 
   var svg = d3.select("#scatter_graph")
     .append("svg")
     .attr("width", width-padding+1)
-    .attr("height", height)
+    .attr("height", height);
 
   svg.append("rect")
     .attr("class", "scatter_wrap")
@@ -22,7 +22,7 @@ function scatter(data) {
   svg.append("rect")
     .attr("class", "scatter_top_left")
     .attr("class", "map")
-    .attr("fill", "#41DD7B")
+    .attr("fill", "#58FF2D")
     .attr("width", width/2-padding-2)
     .attr("transform", "translate("+ (padding+1) +","+ (padding+1) +")")
     .attr("height", height/2-padding-2);
@@ -51,10 +51,6 @@ function scatter(data) {
     .attr("transform", "translate("+ (padding+1) +","+ (height/2+1) +")")
     .attr("height", (height/2)-padding-2);
 
-  var elements = svg.selectAll("g element")
-    .data(items)
-    .enter()
-
   var x = d3.scaleLinear()
     .domain([0,10])
     .range([padding+20,width-padding-20]);
@@ -68,14 +64,19 @@ function scatter(data) {
     .attr("x1", (width/2))
     .attr("x2", (width/2))
     .attr("y1", padding)
-    .attr("y2", height-padding)
+    .attr("y2", height-padding);
 
   svg.append("line")
     .style("stroke", "#75C1E7")
     .attr("x1", (padding))
     .attr("x2", (width-padding))
     .attr("y1", (height/2))
-    .attr("y2", (height/2))
+    .attr("y2", (height/2));
+
+   var elements = svg.selectAll("g element")
+    .data(items)
+    .enter()
+    .append("g");
 
   elements.append("circle")
   .attr("fill", "white")

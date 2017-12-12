@@ -13,5 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(BlueprintsTableSeeder::class);
         $this->call(FeaturesTableSeeder::class);
+        $this->call(TagsTableSeeder::class);
+        $this->call(BlueprintTagTableSeeder::class);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blueprint;
+use App\Tag;
 
 class BlueprintController extends Controller
 {
@@ -12,10 +13,12 @@ class BlueprintController extends Controller
     */
     public function index(Request $request)
     {
-        $blueprints = Blueprint::orderBy('title')->get();
+        $blueprints = Blueprint::orderBy('title')->with('tags')->get();
+        $tags = Tag::orderBy('name')->get();
 
         return view('blueprints.index')->with([
             'blueprints' => $blueprints,
+            'tags' => $tags,
         ]);
     }
 
@@ -26,12 +29,15 @@ class BlueprintController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|min:3',
+            'tag' => 'required',
         ]);
 
         $blueprint = new Blueprint();
         $blueprint->title = $request->input('title');
         $blueprint->map_legend = false;
         $blueprint->save();
+
+        $blueprint->tags()->sync($request->input('tag'));
 
         return redirect()->action(
             'BlueprintController@show', ['id' => $blueprint->id]
@@ -70,8 +76,11 @@ class BlueprintController extends Controller
             return redirect('/')->with('alert', 'Blueprint not found.');
         }
 
+        $tags = Tag::orderBy('name')->get();
+
         return view('blueprints.edit')->with([
             'blueprint' => $blueprint,
+            'tags' => $tags,
         ]);
     }
 
@@ -82,9 +91,11 @@ class BlueprintController extends Controller
     {
         $this->validate($request, [
             'title' => 'required|min:3',
+            'tag' => 'required',
         ]);
         $blueprint = Blueprint::find($id);
         $blueprint->title = $request->input('title');
+        $blueprint->tags()->sync($request->input('tag'));
         $blueprint->save();
         return redirect('/')->with('alert', 'Your changes were saved.');
     }
@@ -116,7 +127,10 @@ class BlueprintController extends Controller
         if (!$blueprint) {
             return redirect('/')->with('alert', 'Blueprint not found');
         }
+        $blueprint->tags()->detach();
+
         $blueprint->delete();
+
         return redirect('/')->with('alert', $blueprint->title.' was removed.');
     }
 
