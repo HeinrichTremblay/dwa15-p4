@@ -27,6 +27,7 @@ class BlueprintsTableSeeder extends Seeder
                 'title' => $blueprint[0],
                 'map_legend' => $blueprint[1],
             ]);
+            
             $count--;
         }
     }

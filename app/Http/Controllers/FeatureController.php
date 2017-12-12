@@ -24,6 +24,7 @@ class FeatureController extends Controller
         $feature->value = $request->input('value');
         $feature->complexity = $request->input('complexity');
         $feature->blueprint_id = $id;
+
         $feature->save();
 
         return redirect()->action(
@@ -38,8 +39,7 @@ class FeatureController extends Controller
     {
         $feature = Feature::find($id);
 
-        if (!$feature)
-        {
+        if (!$feature) {
             return redirect('/')->with('alert', 'Feature not found.');
         }
 
@@ -58,11 +58,14 @@ class FeatureController extends Controller
             'value' => 'required|numeric',
             'complexity' => 'required|numeric',
         ]);
+
         $feature = Feature::find($id);
         $feature->title = $request->input('title');
         $feature->value = $request->input('value');
         $feature->complexity = $request->input('complexity');
+
         $feature->save();
+
         return redirect()->action(
             'BlueprintController@show', ['id' => $feature->blueprint->id]
         )->with('alert', 'Your changes were saved.');
@@ -75,8 +78,7 @@ class FeatureController extends Controller
     {
         $feature = Feature::find($id);
 
-        if (!$feature)
-        {
+        if (!$feature) {
             return redirect('/')->with('alert', 'Feature not found.');
         }
 
@@ -97,7 +99,9 @@ class FeatureController extends Controller
         if (!$feature) {
             return redirect('/')->with('alert', 'Feature not found');
         }
+
         $feature->delete();
+        
         return redirect()->action(
             'BlueprintController@show', ['id' => $blueprintId]
         )->with('alert', $feature->title.' was removed.');

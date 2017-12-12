@@ -36,6 +36,7 @@ class FeaturesTableSeeder extends Seeder
                 'priority' => Feature::getPriority($feature[1], $feature[2]),
                 'blueprint_id' => $blueprint_id,
             ]);
+            
             $count--;
         }
     }

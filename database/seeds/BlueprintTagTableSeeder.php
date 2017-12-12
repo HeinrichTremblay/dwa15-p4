@@ -19,8 +19,7 @@ class BlueprintTagTableSeeder extends Seeder
             'Project X' => 'Freelancing'
         ];
 
-        foreach ($blueprints as $title => $tagName)
-        {
+        foreach ($blueprints as $title => $tagName) {
             $blueprint = Blueprint::where('title', 'like', $title)->first();
 
             $tag = Tag::where('name', 'LIKE', $tagName)->first();

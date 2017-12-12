@@ -18,10 +18,10 @@ class Feature extends Model
         if ($value > 5 && $complexity < 5) {
             // top left
             $priority = $value - $complexity + 10000;
-        } else if ($value > 5 && $complexity >= 5) {
+        } elseif ($value > 5 && $complexity >= 5) {
             // top right
             $priority = $value - $complexity + 1000;
-        } else if ($value <= 5 && $complexity < 5) {
+        } elseif ($value <= 5 && $complexity < 5) {
             // bottom left
             $priority = $value - $complexity + 100;
         } else {

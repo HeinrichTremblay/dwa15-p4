@@ -13,10 +13,8 @@ class ConnectBlueprintsAndFeatures extends Migration
      */
     public function up()
     {
-        Schema::table('features', function (Blueprint $table)
-        {
+        Schema::table('features', function (Blueprint $table) {
             $table->integer('blueprint_id')->unsigned();
-
             $table->foreign('blueprint_id')->references('id')->on('blueprints')->onDelete('cascade');
         });
     }
@@ -28,10 +26,8 @@ class ConnectBlueprintsAndFeatures extends Migration
      */
     public function down()
     {
-        Schema::table('features', function (Blueprint $table)
-        {
+        Schema::table('features', function (Blueprint $table) {
             $table->dropForeign('features_blueprint_id_foreign');
-
             $table->dropColumn('blueprint_id');
         });
     }

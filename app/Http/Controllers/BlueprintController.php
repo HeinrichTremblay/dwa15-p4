@@ -35,6 +35,7 @@ class BlueprintController extends Controller
         $blueprint = new Blueprint();
         $blueprint->title = $request->input('title');
         $blueprint->map_legend = false;
+
         $blueprint->save();
 
         $blueprint->tags()->sync($request->input('tag'));
@@ -51,8 +52,7 @@ class BlueprintController extends Controller
     {
         $blueprint = Blueprint::find($id);
 
-        if (!$blueprint)
-        {
+        if (!$blueprint) {
             return redirect('/')->with('alert', 'Blueprint not found.');
         }
 
@@ -71,8 +71,7 @@ class BlueprintController extends Controller
     {
         $blueprint = Blueprint::find($id);
 
-        if (!$blueprint)
-        {
+        if (!$blueprint) {
             return redirect('/')->with('alert', 'Blueprint not found.');
         }
 
@@ -93,10 +92,12 @@ class BlueprintController extends Controller
             'title' => 'required|min:3',
             'tag' => 'required',
         ]);
+        
         $blueprint = Blueprint::find($id);
         $blueprint->title = $request->input('title');
         $blueprint->tags()->sync($request->input('tag'));
         $blueprint->save();
+
         return redirect('/')->with('alert', 'Your changes were saved.');
     }
 
@@ -107,8 +108,7 @@ class BlueprintController extends Controller
     {
         $blueprint = Blueprint::find($id);
 
-        if (!$blueprint)
-        {
+        if (!$blueprint) {
             return redirect('/')->with('alert', 'Blueprint not found.');
         }
 
@@ -124,9 +124,11 @@ class BlueprintController extends Controller
     public function destroy($id)
     {
         $blueprint = Blueprint::find($id);
+
         if (!$blueprint) {
             return redirect('/')->with('alert', 'Blueprint not found');
         }
+
         $blueprint->tags()->detach();
 
         $blueprint->delete();
@@ -141,7 +143,9 @@ class BlueprintController extends Controller
     {
         $blueprint = Blueprint::find($id);
         $blueprint->map_legend = !$blueprint->map_legend;
+
         $blueprint->save();
+
         return redirect()->action(
             'BlueprintController@show', ['id' => $blueprint->id]
         );
