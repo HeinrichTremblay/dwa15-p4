@@ -14,7 +14,7 @@
     <h2>Edit - {{ $feature->title }}</h2>
     <div class="clear"></div>
   </nav>
-  <section>
+  <div>
     <div class="blueprint_edit_wrapper feature_edit action_panel_wrapper">
       <form action="/feature/{{ $feature->id }}" method="post">
         {{ method_field('put') }}
@@ -49,6 +49,6 @@
       </form>
       <a href="/feature/{{ $feature->id }}/delete">Delete</a>
     </div>
-  </section>
+</div>
 </div>
 @endsection
