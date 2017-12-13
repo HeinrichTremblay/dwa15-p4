@@ -14,7 +14,7 @@ Happy P4 √ Ideas Blueprint.
         <h2>Edit {{ $blueprint->title }}</h2>
         <div class="clear"></div>
     </nav>
-    <section>
+    <div>
         <div class="blueprint_edit_wrapper action_panel_wrapper">
             <form action="/blueprint/{{ $blueprint->id }}" method="post">
                 {{ method_field('put') }}
@@ -29,6 +29,6 @@ Happy P4 √ Ideas Blueprint.
             </form>
             <a href="/blueprint/{{ $blueprint->id }}/delete">Delete</a>
         </div>
-    </section>
+    </div>
 </div>
 @endsection
