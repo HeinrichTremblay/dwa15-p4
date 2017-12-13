@@ -117,7 +117,7 @@ Happy P4 √ Ideas Blueprint.
 
 @push('body')
 <script src="{{ asset('js/d3.min.js') }}"></script>
-<script type="text/javascript">
+<script>
 var xLabel = "Complexity";
 var yLabel = "Value";
 var features = {!! $features->toJson() !!};
