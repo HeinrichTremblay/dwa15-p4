@@ -28,7 +28,7 @@
                     </td>
                     <td style="width:10%">
                         <label for="value">Value</label>
-                        <select id="value" name="value" value="{{ $feature->value }}">
+                        <select id="value" name="value">
                             @for ($i = 0; $i < 10; $i++)
                                 <option value="{{ $i+1 }}" @if($feature->value === $i) selected @endif>{{ $i+1 }}</option>
                             @endfor
