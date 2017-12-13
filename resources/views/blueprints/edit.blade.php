@@ -25,7 +25,7 @@ Happy P4 √ Ideas Blueprint.
                     @endforeach
                 </select>
                 <input type="text" value="{{ $blueprint->title }}" id="title" name="title" placeholder="Blueprint">
-                <input type="submit" name="submit" value="Edit Blueprint">
+                <input type="submit" name="submit" value="Edit">
             </form>
             <a href="/blueprint/{{ $blueprint->id }}/delete">Delete</a>
         </div>
